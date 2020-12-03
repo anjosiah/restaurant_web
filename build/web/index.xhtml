@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Login</title>
+    </h:head>
+    <h:body>
+        <style>
+            html {
+                height:100%;
+            }
+
+            body {
+                margin:0;
+            }
+
+            .bg {
+                animation:slide 3s ease-in-out infinite alternate;
+                background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+                bottom:0;
+                left:-50%;
+                opacity:.5;
+                position:fixed;
+                right:-50%;
+                top:0;
+                z-index:-1;
+            }
+
+            .bg2 {
+                animation-direction:alternate-reverse;
+                animation-duration:4s;
+            }
+
+            .bg3 {
+                animation-duration:5s;
+            }
+
+            .content {
+                background-color:rgba(255,255,255,.8);
+                border-radius:.25em;
+                box-shadow:0 0 .25em rgba(0,0,0,.25);
+                box-sizing:border-box;
+                left:50%;
+                padding:10vmin;
+                position:fixed;
+                text-align:center;
+                top:50%;
+                transform:translate(-50%, -50%);
+            }
+
+            h1 {
+                font-family:monospace;
+            }
+
+            @keyframes slide {
+                0% {
+                    transform:translateX(-25%);
+                }
+                100% {
+                    transform:translateX(25%);
+                }
+            }
+            body{
+                font-family: Arial;
+                background: #170664;
+                padding:210px 0px 210px 0px;
+
+            }
+            .List{
+                text-align: center;
+            }
+            .LoginForm{
+                width: 50%;
+                text-align: center;
+                padding:15px;
+                color: white;
+                display: table;
+                margin: auto;
+                background-color: #023787;
+                border-width: 7px;
+                border-style: outset;
+                border-color: #0a64ee;
+                letter-spacing: -.025em;
+            }
+            .Kotak{
+                text-align: left;
+                color: black;
+                display: table;
+                margin: auto;
+                background-color: #0ad9ee;
+                border-width: 4px;
+                border-style : ridge;
+                border-color: #0ad9ee;
+                padding: 5px 8px;
+                letter-spacing: -.025em;
+            }
+            .output{
+                text-align: left;
+            }
+            .inputbox{
+                border-bottom: #130404;
+                outline: none;
+                background: none;
+                color :windowframe;
+                width: 60%;
+                margin: 10px;
+                float: left;
+            }
+        </style>
+        <h:form>
+            <div class="bg"></div>
+            <div class="bg bg2"></div>
+            <div class="bg bg3"></div>
+
+            <div class="LoginForm">
+                <h:outputLabel for="username" value="User Name "/>  
+                <h:inputText id="username" value="#{User_Ctr.username}"/>
+                <br/>
+                <br/>
+                <h:outputLabel for="password" value="Password "/>  
+                <h:inputSecret id="password" value="#{User_Ctr.password}"/>
+                <br/>
+                <br/>
+                <h:commandButton action="#{User_Ctr.login()}" value="Login" style="width : 20%; font-size : 20px"/>
+                <br/>
+                <br/>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+
